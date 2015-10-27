@@ -1,5 +1,7 @@
 # hubot-foldme
 
+[![Build Status](https://travis-ci.org/wjlroe/hubot-foldme.svg?branch=master)](https://travis-ci.org/wjlroe/hubot-foldme)
+
 A hubot script that makes your day better with pictures of Scottish Folds
 
 See [`src/foldme.coffee`](src/foldme.coffee) for full documentation.
