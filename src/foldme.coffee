@@ -1,22 +1,26 @@
 # Description
 #   A hubot script that makes your day better with pictures of Scottish Folds
 #
-# Configuration:
-#   LIST_OF_ENV_VARS_TO_SET
-#
 # Commands:
-#   hubot hello - <what the respond trigger does>
-#   orly - <what the hear trigger does>
-#
-# Notes:
-#   <optional notes required for the script>
+#   hubot fold me - Reply with an image of a Scottish Fold
+#   hubot how many folds are there - Reply with the number of Scottish Folds available
 #
 # Author:
 #   William Roe <git@wjlr.org.uk>
 
 module.exports = (robot) ->
-  robot.respond /hello/, (res) ->
-    res.reply "hello!"
+  robot.respond /fold me/i, (msg) ->
+    robot.http("http://foldme.herokuapp.com/random")
+      .get() (err, res, body) ->
+        if err
+          msg.reply "Had a problem fetching a random Scottish Fold"
+          return
+        msg.send JSON.parse(body).scotch_fold
 
-  robot.hear /orly/, ->
-    res.send "yarly"
+  robot.respond /how many (scottish )?folds are there(\?)?/i, (msg) ->
+    robot.http("http://foldme.herokuapp.com/count")
+      .get() (err, res, body) ->
+        if err
+          msg.reply "Had a problem fetching the number of Scottish Folds"
+          return
+        msg.send "There are #{JSON.parse(body).fold_count} Scottish Folds"
