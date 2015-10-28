@@ -36,6 +36,18 @@ describe 'foldme integration', ->
         [ 'hubot', 'http://imgur.com/fold.png' ]
       ]
 
+  context 'user requests a Fold bomb', ->
+    beforeEach (done) ->
+      room.user.say 'alice', 'hubot fold bomb'
+      setTimeout done, 100
+
+    it 'should respond with a fold bomb', ->
+      expect(room.messages).to.eql [
+        ['alice', 'hubot fold bomb' ]
+        ['hubot', 'http://imgur.com/fold1.png']
+        ['hubot', 'http://imgur.com/fold2.png']
+      ]
+
   context 'user requests the number of Scottish folds', ->
     beforeEach (done) ->
       room.user.say 'alice', 'hubot how many folds are there'
