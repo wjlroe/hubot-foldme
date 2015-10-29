@@ -1,7 +1,7 @@
 {
   "name": "hubot-foldme",
   "description": "A hubot script that makes your day better with pictures of Scottish Folds",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "William Roe <git@wjlr.org.uk>",
   "license": "MIT",
   "keywords": "hubot, hubot-scripts",
