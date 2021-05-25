@@ -1,6 +1,6 @@
 # hubot-foldme
 
-[![Build Status](https://travis-ci.org/wjlroe/hubot-foldme.svg?branch=master)](https://travis-ci.org/wjlroe/hubot-foldme)
+**This project is no longer maintained and is effectively abandoned**
 
 A hubot script that makes your day better with pictures of Scottish Folds
 
